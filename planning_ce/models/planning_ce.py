@@ -50,6 +50,8 @@ class PlannerCePlanningSlot(models.Model):
     # _rec_name = 'name'
     _check_company_auto = True
 
+    
+
 
     def action_mass_change_slots(self):
         
@@ -369,6 +371,12 @@ class PlannerCeMassChangeSlot(models.TransientModel):
 class PlannerCePlanningSlot(models.Model):
     _name = 'bulk.planner_ce.slot'
     _description = 'Bulk Planning Slot'
+
+    def _search(self, args, offset=0, limit=None, order=None, count=False, access_rights_uid=None):
+        _logger.warning(f"{self=}")
+        res = super()._search(offset, limit, order, count, access_rights_uid)
+        _logger.warning(f"{res=}")
+        return res
 
     @api.depends('week_selection', 'start_datetime')
     def _compute_end_date(self):
