@@ -322,8 +322,9 @@
             <field name="res_model">planner_ce.slot</field>
             <field name="view_mode">calendar,kanban,tree,form,pivot</field>
             <field name="view_id" ref="planning_ce_view_calendar" />
-            <field name="context">{'search_default_group_by_employee': 1, 'planning_expand_employee': 1}</field>
+            <field name="context">{'search_default_group_by_employee': 1,'planning_expand_employee': 1,'search_default_terp-go-week1': 1}</field>
         </record>
+
         <!--    <record id="planning_ce_action_schedule_by_employee_view_gantt" model="ir.actions.act_window.view">-->
         <!--      <field name="sequence" eval="1" />-->
         <!--      <field name="view_mode">gantt</field>-->
